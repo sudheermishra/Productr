@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { verifyOtp, sendOtp } from "../api/services";
 import "../cssmodule/Auth.css";
 import "../cssmodule/Common.css";
+import "../cssmodule/Responsive.css";
 import backImg from "../assets/back.png";
 import frontImg from "../assets/front.jpg";
 import logoVector from "../assets/Vector.png";

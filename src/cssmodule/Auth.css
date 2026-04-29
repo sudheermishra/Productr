@@ -81,7 +81,8 @@
   height: 30px;
   font-family: 'AvertaStd-Black', 'Inter', sans-serif;
   font-size: 24px;
-  font-weight: 900; /* Black weight */
+  font-weight: 900;
+  /* Black weight */
   line-height: 100%;
   letter-spacing: 0%;
   color: #071074;
@@ -95,13 +96,13 @@
   top: 240px;
   left: 189px;
   border-radius: 48px;
-  
+
   /* Antigravity Shadow */
   box-shadow: 0px 8px 34px 0px rgba(0, 0, 0, 0.32);
-  
+
   /* Progressive Border Gradient using background-clip */
   background: linear-gradient(180deg, #FF9500 0%, #000000 100%) padding-box,
-              linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(153, 153, 153, 0.1)) border-box;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(153, 153, 153, 0.1)) border-box;
   border: 2px solid transparent;
 
   position: relative;
@@ -344,9 +345,8 @@
   .auth-left {
     display: none;
   }
+
   .auth-container {
     justify-content: center;
   }
 }
-
-

@@ -180,6 +180,13 @@ function DashboardLayout() {
           <Outlet />
         )}
       </div>
+      {/* Sidebar overlay for mobile */}
+      {sidebarOpen && (
+        <div 
+          className="sidebar-overlay" 
+          onClick={() => setSidebarOpen(false)}
+        ></div>
+      )}
 
     </div>
   );

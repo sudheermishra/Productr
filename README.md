@@ -1,6 +1,6 @@
 # Productr — Frontend
 
-A product management dashboard built with **React + Vite**. It lets you add, edit, publish, and delete products through a clean and modern UI.
+A product management dashboard built with **React + Vite**. It lets you add, edit, publish, and delete products through a clean, modern, and fully responsive UI.
 
 ---
 
@@ -12,7 +12,8 @@ A product management dashboard built with **React + Vite**. It lets you add, edi
 - **Add / Edit Products** — fill in product details and upload images
 - **Publish / Unpublish** products with one click
 - **Delete** products with a confirmation prompt
-- **Protected Routes** — you can't access the dashboard without logging in, and you can't visit the login page again once you're already logged in
+- **Fully Responsive** — optimized for desktop, tablet, and mobile with a custom-built side-navigation drawer for small screens
+- **Protected Routes** — auth guards prevent unauthorized access to the dashboard
 
 ---
 
@@ -55,7 +56,8 @@ src/
 │   ├── Misc.css          # Empty state styles
 │   ├── Products.css      # Product card grid styles
 │   ├── Toast.css         # Toast notification styles
-│   └── Common.css        # Shared reusable styles
+│   ├── Common.css        # Shared reusable styles
+│   └── Responsive.css    # Media query overrides for mobile/tablet
 │
 ├── Layout/
 │   └── DashboardLayout.jsx  # Sidebar + header wrapper for all dashboard pages
@@ -104,21 +106,11 @@ The app will open at **http://localhost:5173** (or the next available port).
 ##  How Authentication Works
 
 1. User enters their **email** on the Login page
-2. Backend sends a **6-digit OTP** to that email
+2. Backend sends a **6-digit OTP** to that email via the Brevo Transactional Email service
 3. User enters the OTP on the Verify page
 4. On success, a **token** is saved in `localStorage` (`productr_token`)
 5. All future API requests automatically include this token via the Axios interceptor
 6. On **Logout**, the token is removed and the user is sent back to the login page
-
-### Route Protection
-
-| Route | Who can access |
-|---|---|
-| `/login`, `/signup`, `/otp` | Only users who are **NOT** logged in |
-| `/`, `/products`, `/logout` | Only users who **ARE** logged in |
-
-If you're already logged in and try to visit `/login` — you'll be redirected to **Home**.  
-If you're not logged in and try to visit `/products` — you'll be redirected to **Login**.
 
 ---
 
@@ -146,6 +138,7 @@ This creates an optimized `dist/` folder ready for deployment.
 
 ##  Notes for Developers
 
+- **Mobile View**: The layout uses a hamburger menu and a custom drawer for navigation on screens smaller than `768px`.
 - **Token storage**: `localStorage` key is `productr_token`
 - **User storage**: `localStorage` key is `productr_user` (JSON)
 - **OTP email storage**: `sessionStorage` key is `otp_email` (cleared after verification)
