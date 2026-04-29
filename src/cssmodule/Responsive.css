@@ -1,0 +1,32 @@
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .sidebar { width: 0; overflow: hidden; }
+  .sidebar.open { width: var(--sidebar-width); }
+  .main-content { margin-left: 0; }
+  .header-search { width: 180px; }
+  .page-content { padding: 16px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .modal { max-width: 95%; }
+  .hamburger { display: flex !important; }
+}
+
+@media (min-width: 769px) {
+  .hamburger { display: none !important; }
+}
+
+.hamburger {
+  width: 32px; height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+  border: none;
+}
+
+/* hidden file input */
+.hidden-file-input {
+  display: none;
+}
