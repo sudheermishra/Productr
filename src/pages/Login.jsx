@@ -70,11 +70,11 @@ function Login() {
 
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="email">Email or Phone number</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="Enter email or phone number"
+                  placeholder="Enter email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="off"
