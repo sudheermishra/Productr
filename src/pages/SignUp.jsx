@@ -85,12 +85,12 @@ function SignUp() {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="signup-email">Email or Phone number</label>
+                <label htmlFor="signup-email">Email</label>
                 <input
                   type="email"
                   id="signup-email"
                   name="email"
-                  placeholder="Enter email or phone number"
+                  placeholder="Enter email"
                   value={form.email}
                   onChange={handleChange}
                   autoComplete="off"
